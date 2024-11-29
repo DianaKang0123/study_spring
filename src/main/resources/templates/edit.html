@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="/main.css" rel="stylesheet">
+</head>
+<body>
+<div th:replace="~{nav.html :: navbar}"></div>
+<!--사용자 입력 값을 서버에 보내고 싶으면 form 태그로 묶어 주어야한다.-->
+<form action="/edit" method="POST">
+    <input name="id" th:value="${editItem.id}" type="hidden">
+    <input name="title" th:value="${editItem.title}">
+    <input name="price" th:value="${editItem.price}">
+    <input name="username" th:value="${editItem.username}">
+    <button type="submit">버튼</button>
+</form>
+</body>
+</html>
